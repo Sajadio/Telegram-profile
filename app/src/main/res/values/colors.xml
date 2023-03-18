@@ -5,8 +5,16 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="color_primary_variant">#598FBA</color>
+    <color name="color_primary_variant">@color/white</color>
     <color name="color_primary">#598FBA</color>
-    <color name="color_secondary">#FFFFFF</color>
+    <color name="colorSecondaryVariant">#F0F0F0</color>
+    <color name="color_secondary">@color/white</color>
+    <color name="color_click_button">#1A1D2733</color>
+    <color name="color_text">#222222</color>
+    <color name="color_hint">#82868A</color>
+    <color name="color_second_hint">#D7EAFA</color>
+    <color name="background">@color/white</color>
+
+<!--    -->
 
 </resources>

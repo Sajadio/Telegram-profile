@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary_variant">
+
+    <TextView
+        android:id="@+id/info"
+        style="@style/TitleTextView"
+        android:layout_marginHorizontal="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/Info"
+        android:textColor="#52ADE9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        style="@style/TitleTextView.WithTopMargin"
+        android:text="@string/phone_number"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/info" />
+
+    <TextView
+        android:id="@+id/mobile"
+        style="@style/HintTextView.WithTopMargin"
+        android:text="@string/mobile"
+        app:layout_constraintEnd_toEndOf="@+id/phoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+    <TextView
+        android:id="@+id/bioText"
+        style="@style/TitleTextView.WithTopMargin"
+        android:text="@string/bio_text"
+        app:layout_constraintStart_toStartOf="@+id/mobile"
+        app:layout_constraintTop_toBottomOf="@+id/mobile" />
+
+    <TextView
+        android:id="@+id/bio"
+        style="@style/HintTextView.WithTopMargin"
+        android:text="@string/bio"
+        app:layout_constraintEnd_toEndOf="@+id/phoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/bioText" />
+
+    <TextView
+        android:id="@+id/atUsername"
+        style="@style/TitleTextView.WithTopMargin"
+        android:text="@string/at_username"
+        app:layout_constraintStart_toStartOf="@+id/bio"
+        app:layout_constraintTop_toBottomOf="@+id/bio" />
+
+    <TextView
+        android:id="@+id/username"
+        style="@style/HintTextView.WithTopMargin"
+        android:text="@string/username"
+        app:layout_constraintEnd_toEndOf="@+id/phoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/atUsername" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        style="@style/IconButton"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/round_qr_code_24"
+        app:layout_constraintBottom_toBottomOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/atUsername"
+        app:tint="#52ADE9"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/view"
+        style="@style/CustomView"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <TextView
+        android:id="@+id/notification"
+        style="@style/TitleTextView.WithTopMargin"
+        android:text="@string/notification"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/notification_state"
+        style="@style/HintTextView.WithTopMargin"
+        android:text="@string/notification_state"
+        app:layout_constraintEnd_toEndOf="@+id/phoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/notification" />
+
+    <View
+        style="@style/CustomView.WithDifferent0Height"
+        app:layout_constraintBottom_toBottomOf="@+id/switchCompat"
+        app:layout_constraintEnd_toStartOf="@+id/switchCompat"
+        app:layout_constraintTop_toTopOf="@+id/switchCompat" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/notification_state"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/notification" />
+
+    <View
+        android:id="@+id/view2"
+        style="@style/CustomView.WithDifferent16Height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchCompat" />
+
+    <TextView
+        android:id="@+id/media"
+        style="@style/TitleTabTextView.WithSecondaryColor"
+        android:layout_marginStart="@dimen/_64dp"
+        android:text="@string/media"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        style="@style/TitleTabTextView"
+        android:text="@string/files"
+        app:layout_constraintEnd_toStartOf="@+id/link"
+        app:layout_constraintStart_toEndOf="@+id/media"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/link"
+        style="@style/TitleTabTextView"
+        android:layout_marginEnd="@dimen/_64dp"
+        android:text="@string/files"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:columnCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/link">
+
+        <ImageView
+            style="@style/Images"
+            android:src="@drawable/img"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            style="@style/Images.WithMarginHorizontal"
+            android:src="@drawable/img_1" />
+
+        <ImageView
+            style="@style/Images"
+            android:src="@drawable/img"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            style="@style/Images"
+            android:src="@drawable/img_1" />
+
+        <ImageView
+            style="@style/Images.WithMarginHorizontal"
+            android:src="@drawable/img" />
+
+        <ImageView
+            style="@style/Images"
+            android:src="@drawable/img_1" />
+
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

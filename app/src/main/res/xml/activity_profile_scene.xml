@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@+id/guidelineOfFAB" />
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@+id/start"
+        motion:constraintSetStart="@id/half">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                motion:motionTarget="@+id/profile_image_full" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:motionTarget="@+id/profile_image" />
+        </KeyFrameSet>
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@+id/nested_scroll_view" />
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start"></ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/floatingActionButton"
+            android:layout_width="@dimen/_56dp"
+            android:layout_height="@dimen/_56dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toTopOf="@id/guidelineOfFAB"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@+id/guidelineOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10" />
+
+        <Constraint
+            android:id="@+id/guidelineOfFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <Constraint
+            android:id="@+id/profile_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="64dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/displayName"
+            style="@style/TitleTextView"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/display_name"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/profile_image"
+            app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/half">
+
+        <Constraint
+            android:id="@+id/guidelineOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <Constraint
+            android:id="@+id/guidelineOfFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.57" />
+
+
+        <Constraint
+            android:id="@+id/profile_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/guidelineOne"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/profile_image_full"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/guidelineOne"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/displayName"
+            style="@style/TitleTextView"
+            android:text="@string/display_name"
+            app:layout_constraintBottom_toTopOf="@+id/last_seen"
+            app:layout_constraintStart_toStartOf="@+id/last_seen" />
+
+        <Constraint
+            android:id="@+id/last_seen"
+            style="@style/HintTextView"
+            android:layout_marginStart="@dimen/_24dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:text="@string/last_seen"
+            app:layout_constraintBottom_toBottomOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/image_count"
+            style="@style/TitleTextView.ImageCount"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_24dp"
+            android:alpha="1"
+            android:text="@string/image_count"
+            app:layout_constraintBottom_toBottomOf="@+id/more_icon"
+            app:layout_constraintEnd_toStartOf="@+id/more_icon"
+            app:layout_constraintTop_toTopOf="@+id/more_icon" />
+
+        <Constraint
+            android:id="@+id/back_video"
+            style="@style/IconButton"
+            android:alpha="0"
+            android:src="@drawable/round_videocam_24"
+            app:layout_constraintEnd_toStartOf="@+id/back_call"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/back_call"
+            style="@style/IconButton"
+            android:alpha="0.0"
+            android:src="@drawable/round_call_24"
+            app:layout_constraintEnd_toStartOf="@+id/more_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </ConstraintSet>
+
+</MotionScene>

@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">TelegramProfile</string>
+    <string name="display_name">Sajjad 🌸</string>
+    <string name="last_seen">last seen recently</string>
+    <string name="Info">Info</string>
+    <string name="mobile">Mobile</string>
+    <string name="bio_text">I am available</string>
+    <string name="bio">Bio</string>
+    <string name="at_username">\@sajjad_io</string>
+    <string name="username">Username</string>
+    <string name="notification">Notification</string>
+    <string name="notification_state">On</string>
+    <string name="media">Media</string>
+    <string name="files">Files</string>
+    <string name="links">Links</string>
+    <string name="image_count">1/1</string>
+    <string name="phone_number">+964 780 101 010</string>
 </resources>

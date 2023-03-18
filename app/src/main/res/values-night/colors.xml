@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="color_primary_variant">#212D3B</color>
+    <color name="color_primary_variant">#1D2733</color>
+    <color name="colorSecondaryVariant">#171F28</color>
     <color name="color_primary">#212D3B</color>
-    <color name="color_secondary">#61AAE1</color>
+    <color name="color_secondary">#52ADE9</color>
+
+    <color name="color_click_button">@color/color_primary_variant</color>
+    <color name="color_text">#D7EAFA</color>
+    <color name="color_hint">#82868A</color>
+    <color name="color_second_hint">#D7EAFA</color>
+    <color name="background">@color/white</color>
 
 </resources>

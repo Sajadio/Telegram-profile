@@ -1,18 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_profile_scene"
     tools:context=".ProfileActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_primary"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineOne"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_image"
+        style="@style/ProfileImage"
+        android:src="@drawable/profile_image"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+    <ImageView
+        android:id="@+id/profile_image_full"
+        style="@style/ProfileImage.WithAlph0"
+        android:src="@drawable/profile_image"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/displayName"
+        style="@style/TitleTextView"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_4dp"
+        android:text="@string/display_name"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/profile_image"
+        app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+    <TextView
+        android:id="@+id/last_seen"
+        style="@style/HintTextView"
+        android:text="@string/last_seen"
+        android:textColor="@color/color_second_hint"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintStart_toStartOf="@id/displayName"
+        app:layout_constraintTop_toBottomOf="@+id/displayName" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/back_icon"
+        style="@style/IconButton"
+        android:src="@drawable/round_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/image_count"
+        style="@style/TitleTextView.ImageCount"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/_24dp"
+        android:alpha="0.0"
+        android:text="@string/image_count"
+        app:layout_constraintBottom_toBottomOf="@+id/more_icon"
+        app:layout_constraintEnd_toStartOf="@+id/more_icon"
+        app:layout_constraintTop_toTopOf="@+id/more_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/back_video"
+        style="@style/IconButton"
+        android:src="@drawable/round_videocam_24"
+        app:layout_constraintEnd_toStartOf="@+id/back_call"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/back_call"
+        style="@style/IconButton"
+        android:src="@drawable/round_call_24"
+        app:layout_constraintEnd_toStartOf="@+id/more_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/more_icon"
+        style="@style/IconButton"
+        android:src="@drawable/baseline_more_vert_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="@dimen/_56dp"
+        android:layout_height="@dimen/_56dp"
+        android:layout_margin="@dimen/_16dp"
+        android:src="@drawable/outline_message_24"
+        android:tint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/guidelineOfFAB"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOfFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
+
+
+    <LinearLayout
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1">
+
+        <include layout="@layout/item_bio" android:id="@+id/includeBio"/>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
