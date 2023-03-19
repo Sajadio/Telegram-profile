@@ -5,7 +5,7 @@
         <item name="android:layout_width">@dimen/_40dp</item>
         <item name="android:layout_height">@dimen/_40dp</item>
         <item name="android:layout_marginVertical">@dimen/_8dp</item>
-        <item name="android:layout_marginHorizontal">@dimen/_16dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/_8dp</item>
         <item name="android:tint">@color/white</item>
         <item name="android:background">@drawable/rounded_button</item>
     </style>
@@ -100,8 +100,13 @@
         <item name="android:layout_marginStart">@dimen/_16dp</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
-    <style name="ProfileImage.WithAlph0">
-        <item name="android:alpha">0</item>
+
+    <style name="ProfileImage.Small">
+        <item name="android:layout_width">@dimen/_40dp</item>
+        <item name="android:layout_height">@dimen/_40dp</item>
+        <item name="android:layout_marginStart">@dimen/_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/_8dp</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
 
 </resources>

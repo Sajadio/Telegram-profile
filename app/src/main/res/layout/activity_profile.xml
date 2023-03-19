@@ -17,22 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/profile_image"
         style="@style/ProfileImage"
         android:src="@drawable/profile_image"
         app:layout_constraintBottom_toBottomOf="@+id/view1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/CircleImageView" />
-
-    <ImageView
-        android:id="@+id/profile_image_full"
-        style="@style/ProfileImage.WithAlph0"
-        android:src="@drawable/profile_image"
-        app:layout_constraintBottom_toBottomOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:roundPercent="1" />
 
     <TextView
         android:id="@+id/displayName"
@@ -119,7 +111,7 @@
 
 
     <LinearLayout
-        android:id="@+id/nested_scroll_view"
+        android:id="@+id/line1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -127,7 +119,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view1">
 
-        <include layout="@layout/item_bio" android:id="@+id/includeBio"/>
+        <include
+            android:id="@+id/includeBio"
+            layout="@layout/item_bio" />
 
 
     </LinearLayout>
